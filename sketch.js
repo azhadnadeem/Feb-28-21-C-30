@@ -23,7 +23,7 @@ function setup() {
  
   //level one
   block1 = new Block(300,275,30,40);
-  //console.log(block1);
+  console.log(block1);
   block2 = new Block(330,275,30,40);
   block3 = new Block(360,275,30,40);
   block4 = new Block(390,275,30,40);
@@ -62,8 +62,6 @@ function setup() {
   World.add(world,ball);
 
   slingShot = new Slingshot(this.ball,{x:100,y:200});
-
-
 
 }
 function draw() {
@@ -116,11 +114,11 @@ function draw() {
   imageMode(CENTER)
   image(polygon_img ,ball.position.x,ball.position.y,40,40);
 
- // slingShot.display();
+  slingShot.display();
 }
 function mouseDragged(){
   Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
 }
-//function mouseReleased(){
- // slingShot.fly();
-//}
+function mouseReleased(){
+  slingShot.fly();
+}
